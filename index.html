@@ -413,6 +413,23 @@
     .bento-num { color: var(--green); font-size: 11px; font-weight: 850; letter-spacing: .15em; }
     .bento-card h3 { margin: 10px 0 7px; font-size: 24px; letter-spacing: -.03em; }
     .bento-card p { max-width: 420px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .app-crop {
+      position: absolute;
+      left: auto;
+      bottom: -8px;
+      overflow: hidden;
+      border: 1px solid var(--border-medium);
+      border-radius: 28px;
+      background: #050707;
+      box-shadow: 0 24px 55px rgba(0,0,0,.5), 0 0 36px rgba(101,230,83,.08);
+    }
+    .app-crop img { width: 100%; height: auto; object-fit: contain; }
+    .calendar-crop { width: 190px; right: 38px; transform: rotate(1deg); }
+    .stats-crop { width: 175px; right: 28px; transform: rotate(-1deg); }
+    .categories-crop { width: 120px; right: 18px; border-radius: 22px; }
+    .bento-card.large h3, .bento-card.large p { max-width: 58%; }
+    .bento-card.medium h3, .bento-card.medium p { max-width: 54%; }
+    .bento-card.your-way h3, .bento-card.your-way p { max-width: 58%; }
     .calendar-art { position: absolute; left: 28px; right: 28px; bottom: -55px; display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; padding: 20px; border: 1px solid var(--border); border-radius: 23px; background: #0b0e0e; box-shadow: 0 24px 50px rgba(0,0,0,.35); }
     .cal-cell { aspect-ratio: 1; display: grid; place-items: center; border-radius: 10px; color: var(--tertiary); background: var(--surface); font-size: 10px; }
     .cal-cell.active { color: #081008; background: var(--green); box-shadow: 0 0 18px var(--green-glow); }
@@ -688,29 +705,17 @@
               <img class="real-product-shot" src="assets/subbie-categories.png" alt="Subbie category management screen" loading="lazy">
             </div>
             <div class="stage-scene" id="searchScene">
-              <div class="mini-window">
-                <div class="mini-top"><strong>Search</strong><span class="mini-pill">All</span></div>
-                <div class="search-box"><b>⌕</b><span>Search subscriptions</span></div>
-                <div class="result-list">
-                  <div class="result"><div class="service-logo" style="background:var(--pink)">N</div><div class="result-copy"><strong>Netflix</strong><span>Streaming · Monthly</span></div><div class="result-price">$15.49</div></div>
-                  <div class="result"><div class="service-logo" style="background:var(--blue)">iC</div><div class="result-copy"><strong>iCloud</strong><span>Cloud · Monthly</span></div><div class="result-price">$2.99</div></div>
-                  <div class="result"><div class="service-logo" style="background:var(--purple)">F</div><div class="result-copy"><strong>Figma</strong><span>Productivity · Yearly</span></div><div class="result-price">$144</div></div>
-                </div>
-              </div>
+              <img class="real-product-shot" src="assets/subbie-search.png" alt="Subbie search screen showing subscription filters and results" loading="lazy">
             </div>
           </div>
         </div>
 
         <div class="bento">
-          <article class="bento-card large reveal"><span class="bento-num">01 · CALENDAR</span><h3>A calendar built around what’s due.</h3><p>Spot renewals at a glance and switch between total and remaining spend.</p><div class="calendar-art">
-            <span class="cal-cell">1</span><span class="cal-cell">2</span><span class="cal-cell">3</span><span class="cal-cell active">4</span><span class="cal-cell">5</span><span class="cal-cell">6</span><span class="cal-cell">7</span>
-            <span class="cal-cell">8</span><span class="cal-cell">9</span><span class="cal-cell">10</span><span class="cal-cell">11</span><span class="cal-cell">12</span><span class="cal-cell">13</span><span class="cal-cell">14</span>
-            <span class="cal-cell">15</span><span class="cal-cell">16</span><span class="cal-cell">17</span><span class="cal-cell">18</span><span class="cal-cell">19</span><span class="cal-cell">20</span><span class="cal-cell">21</span>
-          </div></article>
-          <article class="bento-card medium reveal"><span class="bento-num">02 · INSIGHTS</span><h3>See where it all goes.</h3><p>Compare categories, services, and monthly trends.</p><div class="donut-wrap"><div class="donut"></div></div></article>
+          <article class="bento-card large reveal"><span class="bento-num">01 · CALENDAR</span><h3>A calendar built around what’s due.</h3><p>Spot renewals at a glance and switch between total and remaining spend.</p><div class="app-crop calendar-crop"><img src="assets/subbie-calendar.png" alt="Subbie renewal calendar" loading="lazy"></div></article>
+          <article class="bento-card medium reveal"><span class="bento-num">02 · INSIGHTS</span><h3>See where it all goes.</h3><p>Compare categories, services, and monthly trends.</p><div class="app-crop stats-crop"><img src="assets/subbie-stats.png" alt="Subbie monthly spending insights" loading="lazy"></div></article>
           <article class="bento-card third reveal"><span class="bento-num">03 · REMINDERS</span><h3>Know before renewal day.</h3><p>Set reminders for subscriptions and free trials.</p><div class="notification-stack"><div class="notification"><div class="notification-icon netflix"><img src="assets/netflix.svg" alt="Netflix"></div><div><strong>Netflix renews in 2 days</strong><span>$15.49 · Monthly</span></div></div><div class="notification"><div class="notification-icon claude"><img src="assets/claude.svg" alt="Claude"></div><div><strong>Claude renews tomorrow</strong><span>$20.00 · Monthly</span></div></div></div></article>
           <article class="bento-card third reveal"><span class="bento-num">04 · CYCLES</span><h3>Every kind of recurring plan.</h3><p>Weekly through yearly, including trials.</p><div class="cycle-cloud"><span>Weekly</span><span class="active">Monthly</span><span>Quarterly</span><span>Yearly</span><span>Free trial</span></div></article>
-          <article class="bento-card third reveal"><span class="bento-num">05 · YOUR WAY</span><h3>Categories that make sense to you.</h3><p>Use colors and logos to make every service recognizable.</p><div class="logo-cloud"><span>N</span><span>iC</span><span>F</span><span>A</span></div></article>
+          <article class="bento-card third your-way reveal"><span class="bento-num">05 · YOUR WAY</span><h3>Categories that make sense to you.</h3><p>Use colors and icons to organize services your way.</p><div class="app-crop categories-crop"><img src="assets/subbie-categories.png" alt="Subbie category management" loading="lazy"></div></article>
         </div>
       </div>
     </section>
